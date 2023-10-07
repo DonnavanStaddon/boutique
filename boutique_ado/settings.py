@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-do#ubk(%71^stwumif27h!iipyb8$yr^*1x&en)j=gh387%@0(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-donnavanstaddo-boutique-0x3ahdaqsp1.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-donnavanstaddo-boutique-slejamx7tho.ws-eu105.gitpod.io']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django.contrib.sites',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,10 @@ ROOT_URLCONF = 'boutique_ado.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
